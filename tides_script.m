@@ -22,12 +22,12 @@ noise_threshold = 0.9;
 number_of_tides_steps = 257; % to get TIDES at 256 places, please provide the value 257
 
 minx = min(data(:, 1));
-miny = min(data(:, 2));
+miny = min(data(:, 2));  
 minz = min(data(:, 3));
 
 maxx = max(data(:, 1));
-maxy = max(data(:, 2));
-maxz = max(data(:, 3));
+maxy = max(data(:, 2));  
+maxz = max(data(:, 3));  
 
 % If slices of DREVI needed, it is a vector of locations where DREVI is
 % needed. The following will produce a DREVI slice at x = 0.1 only.
@@ -48,4 +48,4 @@ file.threeD_edge_visualize(marker1, marker2, marker3, get_drevi_slices_at, 'disp
 
 % get threeD-dremi
 dremi_score = file.compute_threeD_dremi(marker1, marker2, marker3, noise_threshold, ...
-        'minx', minx, 'miny', miny, 'minz', minz, 'maxx', maxx, 'maxy', maxy, 'maxz', maxz);
+        'minx', minx, 'miny', miny, 'minz', minz, 'maxx', maxx, 'maxy', maxy, 'maxz', maxz);               
