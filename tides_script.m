@@ -46,8 +46,6 @@ file.threeD_edge_visualize(marker1, marker2, marker3, get_drevi_slices_at, 'disp
 [tides_scores, trajectory_points] = file.compute_windowed_DREMI_interpolate(marker1, marker2, marker3, number_of_tides_steps, noise_threshold, ...
         'minx', minx, 'miny', miny, 'minz', minz, 'maxx', maxx, 'maxy', maxy, 'maxz', maxz);
 
-
-
 % get threeD-dremi
 dremi_score = file.compute_threeD_dremi(marker1, marker2, marker3, noise_threshold, ...
         'minx', minx, 'miny', miny, 'minz', minz, 'maxx', maxx, 'maxy', maxy, 'maxz', maxz);
