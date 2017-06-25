@@ -6,7 +6,7 @@ close all
 loc = pwd;
 addpath(genpath(loc));
 
-% load the file
+% load the fcs file
 file = cytof_data_min('filename.fcs');
 
 % three markers of interest:
