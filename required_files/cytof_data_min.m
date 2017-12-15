@@ -7417,7 +7417,7 @@ classdef cytof_data_min
                     
                     colormap(j)
                     view_2dslice_min(estimated_points, meshX, meshY, meshZ, {channel1_name, channel2_name, channel3_name}, x_or_y,  points_to_slice_at(slice_at));
-                    %hold on
+                    hold on
                     %zlim([0 zmax+1]);             
                     %xlabel('EMT-time')
                     %ylabel('pERK')
