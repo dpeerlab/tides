@@ -33,10 +33,10 @@ function view_2dslice_min(estimated_points_grid, meshx, meshy, meshz, labels, fi
     end
         
     
-    xlabel('X');
-    ylabel('Y');
-    zlabel('Z');
-    set(gca, 'FontSize', 16, 'FontWeight', 'bold')
+%     xlabel('X');
+%     ylabel('Y');
+%     zlabel('Z');
+%     set(gca, 'FontSize', 16, 'FontWeight', 'bold')
     
     xmax = max(meshx(:));
     ymax = max(meshy(:));

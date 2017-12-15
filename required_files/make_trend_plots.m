@@ -42,7 +42,7 @@ function weights = compute_weights(points, loc, smoothing_factor)
     %linear_slope = 10/range;
     
     
-    min_std_dev = std(points) * 1.34 * length(points)^(-1/5) * smoothing_factor;
+    min_std_dev = std(points) * 1.06 * length(points)^(-1/5) * smoothing_factor;
     
     weights = ((2*pi*(min_std_dev)^2)^(-0.5))*exp(-.5*((points - loc)/min_std_dev).^2);
     

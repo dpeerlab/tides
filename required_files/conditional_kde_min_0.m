@@ -5,9 +5,9 @@ function [ estimated_points_grid, meshX, meshY, conditional_mean, xvalues] = con
     %q = kde(transpose(edge_data),'rot');
      min_vals = min(edge_data);
      [~, y0, ~, ~, ~, x1, y1] = pairwise_visualize_matrix_min_0(edge_data, 'no_plot', varargin{:});
-     %max(edge_data);
-     max_vals = [max(x1), max(edge_data(:, 2))];%max(edge_data);%
-     %max_vals = [max(x1), max(y1)];
+     
+     max_vals = [max(x1), max(edge_data(:, 2))];
+     
      
      if(length(varargin)>0)
          for i=1:length(varargin)
@@ -50,9 +50,7 @@ function [ estimated_points_grid, meshX, meshY, conditional_mean, xvalues] = con
      num_points1 = 256;
      widthX = max_vals(1)/num_points1;
      widthY = max_vals(2)/num_points1;
-    
-     min_vals
-     max_vals
+         
      [~, estimated_points_grid, meshX, meshY] = kde2d(edge_data, 256, min_vals, max_vals);
      
      

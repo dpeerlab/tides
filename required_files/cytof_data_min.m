@@ -1441,6 +1441,7 @@ classdef cytof_data_min
             
             am_being_transformed = sprintf('I am being transformed! \n')
             
+            
             %should I just transform all of this data?
             %well I don't understand this transform well
             %maybe I should just transform everything and then check
@@ -6950,7 +6951,7 @@ classdef cytof_data_min
             valid_partitions;
             avg_partition_entropies = avg_partition_entropies/valid_partitions;
             DREMI = total_entropy - avg_partition_entropies;
-            DREMI = DREMI/log2(num_partitions);
+            DREMI = DREMI;%/log2(num_partitions);
             range(meshX(:));
             %DREMI = DREMI/(max(meshX(:)) - min(meshX(:)));
             %DREMI = DREMI * (range(meshY(:)));
@@ -7406,7 +7407,7 @@ classdef cytof_data_min
                 %title('Heat Eq. based method', 'FontSize', 16);
                 
                 clearvars Movie_ko_lagi;
-                figure;
+                %figure;
                 for slice_at = 1:length(points_to_slice_at)
                     figure;
                     %whitebg([230, 230, 250]/256);
@@ -7417,7 +7418,7 @@ classdef cytof_data_min
                     
                     colormap(j)
                     view_2dslice_min(estimated_points, meshX, meshY, meshZ, {channel1_name, channel2_name, channel3_name}, x_or_y,  points_to_slice_at(slice_at));
-                    hold on
+                    %hold on
                     %zlim([0 zmax+1]);             
                     %xlabel('EMT-time')
                     %ylabel('pERK')
