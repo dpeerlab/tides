@@ -7,15 +7,15 @@ loc = pwd;
 addpath(genpath(loc));
 
 % load the fcs file
-file = cytof_data_min('EM141482.fcs');
+file = cytof_data_min('name of the file.fcs');
 
 % arch-sinh transform the data with a co-factor of 5:
 file = file.transform_data(5);
 
 % three markers of interest:
-marker1 = 'il-7ra';
-marker2 = 'perforin';
-marker3 = 't-bet';
+marker1 = 'marker1 name';
+marker2 = 'marker2 name';
+marker3 = 'marker3 name';
 
 % get the N x 3 matrix of the three markers
 data = file.get_data({marker1, marker2, marker3});
@@ -24,16 +24,17 @@ data = file.get_data({marker1, marker2, marker3});
 noise_threshold = 0.9;
 number_of_tides_steps = 257; % to get TIDES at 256 places, please provide the value 257
 
-minx = min(data(:, 1));
+% it is recommended that you set the min and max at 1 and 99 percentile respectively-- use prctile command in MATLAB
+minx = min(data(:, 1));  % for 1 percentile, you could do : minx = prctile(data(:, 1), 1);
 miny = min(data(:, 2));  
-minz = min(data(:, 3));
+minz = min(data(:, 3));  
 
 maxx = max(data(:, 1));
 maxy = max(data(:, 2));  
 maxz = max(data(:, 3));  
 
 % If slices of DREVI needed, it is a vector of locations where DREVI is
-% needed. The following will produce a DREVI slice at x = 0.1 only.
+% needed. 
 get_drevi_slices_at = linspace(minx, maxx, 40);
 
 % get threeD-DREVI:
